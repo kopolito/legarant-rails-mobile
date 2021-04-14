@@ -1,0 +1,67 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :firstname %>
+    <%= form.text_field :firstname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lastname %>
+    <%= form.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mobilephone %>
+    <%= form.text_field :mobilephone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mailingcity %>
+    <%= form.text_field :mailingcity %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mailingcountry %>
+    <%= form.text_field :mailingcountry %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mailingpostalcode %>
+    <%= form.text_field :mailingpostalcode %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mailingstate %>
+    <%= form.text_field :mailingstate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mailingstreet %>
+    <%= form.text_field :mailingstreet %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
