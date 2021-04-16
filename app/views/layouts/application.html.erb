@@ -11,6 +11,12 @@
 
   <body>
     <head>
+      <% if logged_in? %>
+        <h1>You are Logged In, <%= current_user.firstname %></h1>
+      <%end%>
+      <%= button_to "Login", '/login', method: :get%>
+      <%= button_to "Sign Up", '/users/new', method: :get%>
+
       <% if notice %>
         <p class="alert alert-success"><%= notice %></p>
       <% end %>

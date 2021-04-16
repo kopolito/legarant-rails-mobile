@@ -61,6 +61,13 @@
     <%= form.text_field :mailingstreet %>
   </div>
 
+  <div class="field">
+    <%= form.label :password, 'Mot de passe' %>
+    <%= form.password_field :password %><br>
+    <b><%= user.encrypted_password__c %></b><br>
+    <b><%= user.encrypted_password__c %></b><br>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
