@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       if @user.valid_password(params[:password])
         # session.clear
         session[:user_id] = @user.id
-        redirect_to "/welcome"
+        redirect_to @user
       end
     else
       redirect_to "/login", notice: "echec"

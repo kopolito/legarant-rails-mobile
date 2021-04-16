@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   self.table_name = "salesforce.contact"
 
+  validates :phone, :allow_blank => true, :numericality => true, :length => { :minimum => 10, :maximum => 15 }
+
+  validates :mobilephone, :allow_blank => true, :numericality => true, :length => { :minimum => 10, :maximum => 15 }
+
   def password
     return encrypted_password__c
   end

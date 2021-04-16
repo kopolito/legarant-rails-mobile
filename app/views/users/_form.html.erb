@@ -11,64 +11,63 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :firstname %>
-    <%= form.text_field :firstname %>
+  <div class="form-group">
+    <%= form.label :firstname %>*
+    <%= form.text_field :firstname, {class: "form-control", placeholder: "First Name", required: true} %>
   </div>
-
-  <div class="field">
-    <%= form.label :lastname %>
-    <%= form.text_field :lastname %>
+  <br />
+  <div class="form-group">
+    <%= form.label :lastname %>*
+    <%= form.text_field :lastname, {class: "form-control", placeholder: "Last Name", required: true} %>
   </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <br />
+  <div class="form-group">
+    <%= form.label :email %>*
+    <%= form.email_field :email, {class: "form-control", placeholder: "Email", required: true} %>
   </div>
-
-  <div class="field">
+  <br />
+  <div class="form-group">
     <%= form.label :phone %>
-    <%= form.text_field :phone %>
+    <%= form.telephone_field :phone, {class: "form-control", placeholder: "Phone Number"} %>
   </div>
-
-  <div class="field">
+  <br />
+  <div class="form-group">
     <%= form.label :mobilephone %>
-    <%= form.text_field :mobilephone %>
+    <%= form.telephone_field :mobilephone, {class: "form-control", placeholder: "Mobile Phone Number"} %>
   </div>
-
-  <div class="field">
+  <br />
+  <div class="form-group">
     <%= form.label :mailingcity %>
-    <%= form.text_field :mailingcity %>
+    <%= form.text_field :mailingcity, {class: "form-control", placeholder: "Mailing City"} %>
   </div>
-
-  <div class="field">
+  <br />
+  <div class="form-group">
     <%= form.label :mailingcountry %>
-    <%= form.text_field :mailingcountry %>
+    <%= form.text_field :mailingcountry, {class: "form-control", placeholder: "Mailing Country"} %>
   </div>
-
-  <div class="field">
+  <br />
+  <div class="form-group">
     <%= form.label :mailingpostalcode %>
-    <%= form.text_field :mailingpostalcode %>
+    <%= form.text_field :mailingpostalcode, {class: "form-control", placeholder: "Mailing Postal Code"} %>
   </div>
-
-  <div class="field">
+  <br />
+  <div class="form-group">
     <%= form.label :mailingstate %>
-    <%= form.text_field :mailingstate %>
+    <%= form.text_field :mailingstate, {class: "form-control", placeholder: "Mailing State"} %>
   </div>
-
-  <div class="field">
+  <br />
+  <div class="form-group">
     <%= form.label :mailingstreet %>
-    <%= form.text_field :mailingstreet %>
+    <%= form.text_field :mailingstreet, {class: "form-control", placeholder: "Mailing Street"} %>
   </div>
-
-  <div class="field">
-    <%= form.label :password, 'Mot de passe' %>
-    <%= form.password_field :password %><br>
-    <b><%= user.encrypted_password__c %></b><br>
-    <b><%= user.encrypted_password__c %></b><br>
+  <br />
+  <div class="form-group">
+    <%= form.label :password, 'Password (optional)' %>
+    <%= form.password_field :password, {class: "form-control"} %>
   </div>
-
+  <br />
+  <p>* Mandatory fields</p>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary"  %>
   </div>
 <% end %>

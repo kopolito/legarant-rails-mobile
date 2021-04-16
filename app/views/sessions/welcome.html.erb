@@ -4,4 +4,6 @@
   <%= button_to "Login", '/login', method: :get%>
   <br />
   <%= button_to "Sign Up", '/users/new', method: :get%>
+<% else%>
+<%= link_to 'My profile', current_user,  {class: "btn btn-primary"} %>
 <% end %>
