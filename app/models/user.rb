@@ -13,7 +13,7 @@ class User < ApplicationRecord
     BCrypt::Password.create(password).to_s
   end
 
-  def valid_password(hash)
-    BCrypt::Password.new(hash) == self.encrypted_password__c
+  def valid_password(pass)
+    BCrypt::Password.new(self.encrypted_password__c) == pass
   end
 end
