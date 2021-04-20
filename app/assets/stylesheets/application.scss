@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+a.btn,
+a.btn:hover {
+  color: white;
+}
+
+nav {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+  a:hover {
+    background-color: #7da7e6;
+    color: white !important;
+    border: 1px solid #0d6efd;
+  }
+  .navbar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sfid:</strong>
+  <%= @contract.sfid %>
+</p>
+
+<p>
+  <strong>Accountid:</strong>
+  <%= @contract.accountid %>
+</p>
+
+<p>
+  <strong>Startdate:</strong>
+  <%= @contract.startdate %>
+</p>
+
+<p>
+  <strong>Special Terms:</strong>
+  <%= @contract.specialterms %>
+</p>
+
+<%= link_to 'My contracts', contracts_path,  {class: "btn btn-primary"} %>

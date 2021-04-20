@@ -1,0 +1,77 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :firstname %>*
+    <%= form.text_field :firstname, {class: "form-control", placeholder: "First Name", required: true} %>
+  </div>
+  <br />
+  <div class="form-group">
+    <%= form.label :lastname %>*
+    <%= form.text_field :lastname, {class: "form-control", placeholder: "Last Name", required: true} %>
+  </div>
+  <br />
+  <div class="form-group">
+    <%= form.label :email %>*
+    <%= form.email_field :email, {class: "form-control", placeholder: "Email", required: true} %>
+  </div>
+  <br />
+  <div class="form-group">
+    <%= form.label :phone %>
+    <%= form.telephone_field :phone, {class: "form-control", placeholder: "Phone Number"} %>
+  </div>
+  <br />
+  <div class="form-group">
+    <%= form.label :mobilephone %>
+    <%= form.telephone_field :mobilephone, {class: "form-control", placeholder: "Mobile Phone Number"} %>
+  </div>
+  <br />
+  <div class="form-group">
+    <%= form.label :mailingstreet %>
+    <%= form.text_field :mailingstreet, {class: "form-control", placeholder: "Mailing Street"} %>
+  </div>
+  <br />
+  <div class="form-group">
+    <%= form.label :mailingcity %>
+    <%= form.text_field :mailingcity, {class: "form-control", placeholder: "Mailing City"} %>
+  </div>
+  <br />
+  <div class="form-group">
+    <%= form.label :mailingpostalcode %>
+    <%= form.text_field :mailingpostalcode, {class: "form-control", placeholder: "Mailing Postal Code"} %>
+  </div>
+  <br />
+  <div class="form-group">
+    <%= form.label :mailingstate %>
+    <%= form.text_field :mailingstate, {class: "form-control", placeholder: "Mailing State"} %>
+  </div>
+  <br />
+  <div class="form-group">
+    <%= form.label :mailingcountry %>
+    <%= form.text_field :mailingcountry, {class: "form-control", placeholder: "Mailing Country"} %>
+  </div>
+  <br />
+  <div class="form-group">
+     <% if current_user %>
+      <%= form.label :encrypted_password__c, 'Confirm your Password*' %>
+    <% else %>
+      <%= form.label :encrypted_password__c, 'Choose a Password*' %>
+    <% end %>
+    <%= form.password_field :encrypted_password__c, {class: "form-control", required: true} %>
+  </div>
+  <br />
+  <p>* Mandatory fields</p>
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary"  %>
+  </div>
+<% end %>

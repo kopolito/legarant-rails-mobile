@@ -9,7 +9,51 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Legarant</a>
+      </div>
+      <ul class="nav nav-tabs">
+        <% if current_user %>
+          <li class="nav-item">
+            <a class="nav-link" href="/welcome">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/<%= current_user.id %>">My Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contracts">My contracts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Sign Out</a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/new">Sign Up</a>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+
+    <% if current_user %>
+        <p><br />Logged as <%= current_user.email %>&nbsp;&nbsp;</p>
+        <% end %>
+    
+
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+    </head>
+    <div class="container" style="padding-top: 50px;">
+      <%= yield %>
+    </div>
   </body>
 </html>

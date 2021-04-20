@@ -1,0 +1,12 @@
+<h1>Welcome</h1>
+<br />
+<% if !logged_in? %>
+  <%= button_to "Login", '/login', method: :get%>
+  <br />
+  <%= button_to "Sign Up", '/users/new', method: :get%>
+<% else%>
+  <%= link_to 'My profile', "/users/#{current_user.id}",  {class: "btn btn-primary"} %>
+  <br />
+  <br />
+  <%= link_to 'My contracts', contracts_path,  {class: "btn btn-primary"} %>
+<% end %>
