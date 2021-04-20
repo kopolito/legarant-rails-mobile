@@ -1,0 +1,12 @@
+<h1>Login</h1>
+<%= form_tag '/passwd' do %>
+   <div class="field">
+      <%= label_tag :encrypted_password__c, 'Votre ancien mot de passe' %>
+      <%= password_field_tag :encrypted_password__c%>
+   </div>
+   <div class="field">
+      <%= label_tag :password, 'Votre nouveau mot de passe' %>
+      <%= password_field_tag :password%>
+   </div>
+   <%= submit_tag "Modifier",  {class: "btn btn-info"}%>
+<%end%>
