@@ -16,38 +16,46 @@
 </p>
 
 <p>
+  <strong>Account Id:</strong>
+  <%= @user.accountid %>
+</p>
+
+<p>
   <strong>Phone:</strong>
   <%= @user.phone %>
 </p>
 
 <p>
-  <strong>Mobilephone:</strong>
+  <strong>Mobile phone:</strong>
   <%= @user.mobilephone %>
 </p>
 
 <p>
-  <strong>Mailingcity:</strong>
+  <strong>Mailing street:</strong>
+  <%= @user.mailingstreet %>
+</p>
+
+<p>
+  <strong>Mailing city:</strong>
   <%= @user.mailingcity %>
 </p>
 
 <p>
-  <strong>Mailingcountry:</strong>
-  <%= @user.mailingcountry %>
-</p>
-
-<p>
-  <strong>Mailingpostalcode:</strong>
+  <strong>Mailing postal code:</strong>
   <%= @user.mailingpostalcode %>
 </p>
 
 <p>
-  <strong>Mailingstate:</strong>
+  <strong>Mailing state:</strong>
   <%= @user.mailingstate %>
 </p>
 
 <p>
-  <strong>Mailingstreet:</strong>
-  <%= @user.mailingstreet %>
+  <strong>Mailing country:</strong>
+  <%= @user.mailingcountry %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user),  {class: "btn btn-primary"} %>
+<br />
+<br />
+<%= link_to 'My contracts', contracts_path,  {class: "btn btn-primary"} %>

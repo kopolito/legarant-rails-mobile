@@ -37,13 +37,13 @@
   </div>
   <br />
   <div class="form-group">
-    <%= form.label :mailingcity %>
-    <%= form.text_field :mailingcity, {class: "form-control", placeholder: "Mailing City"} %>
+    <%= form.label :mailingstreet %>
+    <%= form.text_field :mailingstreet, {class: "form-control", placeholder: "Mailing Street"} %>
   </div>
   <br />
   <div class="form-group">
-    <%= form.label :mailingcountry %>
-    <%= form.text_field :mailingcountry, {class: "form-control", placeholder: "Mailing Country"} %>
+    <%= form.label :mailingcity %>
+    <%= form.text_field :mailingcity, {class: "form-control", placeholder: "Mailing City"} %>
   </div>
   <br />
   <div class="form-group">
@@ -57,13 +57,17 @@
   </div>
   <br />
   <div class="form-group">
-    <%= form.label :mailingstreet %>
-    <%= form.text_field :mailingstreet, {class: "form-control", placeholder: "Mailing Street"} %>
+    <%= form.label :mailingcountry %>
+    <%= form.text_field :mailingcountry, {class: "form-control", placeholder: "Mailing Country"} %>
   </div>
   <br />
   <div class="form-group">
-    <%= form.label :password, 'Password (optional)' %>
-    <%= form.password_field :password, {class: "form-control"} %>
+     <% if current_user %>
+      <%= form.label :encrypted_password__c, 'Confirm your Password*' %>
+    <% else %>
+      <%= form.label :encrypted_password__c, 'Choose a Password*' %>
+    <% end %>
+    <%= form.password_field :encrypted_password__c, {class: "form-control", required: true} %>
   </div>
   <br />
   <p>* Mandatory fields</p>

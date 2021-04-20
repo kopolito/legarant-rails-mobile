@@ -12,31 +12,37 @@
   <body class="container">
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Legarant</a>
-      <% if current_user %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Legarant</a>
       </div>
-      <span>Logged as <%= current_user.email %>.&nbsp;&nbsp;</span>
-      <%= button_to "Sign Out", '/logout' %>&nbsp;
-    <% end %>
+      <ul class="nav nav-tabs">
+        <% if current_user %>
+          <li class="nav-item">
+            <a class="nav-link" href="/welcome">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/<%= current_user.id %>">My Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contracts">My contracts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Sign Out</a>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/new">Sign Up</a>
+          </li>
+        <% end %>
+      </ul>
     </nav>
+
+    <% if current_user %>
+        <p><br />Logged as <%= current_user.email %>&nbsp;&nbsp;</p>
+        <% end %>
     
 
       <% if notice %>
@@ -46,6 +52,8 @@
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
     </head>
-    <%= yield %>
+    <div class="container" style="padding-top: 50px;">
+      <%= yield %>
+    </div>
   </body>
 </html>
