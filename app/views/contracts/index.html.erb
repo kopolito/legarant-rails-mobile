@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>My contracts</h1>
+<% if @contracts.length %>
+<table>
+  <thead>
+    <tr>
+      <th>Sfid</th>
+      <th>Account Name</th>
+      <th>Startdate</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contracts.each do |contract| %>
+      <tr>
+        <td><%= contract.sfid %></td>
+        <td><%= contract.account_name %></td>
+        <td><%= contract.startdate %></td>
+        <td><%= link_to 'Show', contract,  {class: "btn btn-info"} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% else %>
+<br />
+<br />
+<p>You don't have related contracts</p>
+<% end %>

@@ -1,0 +1,61 @@
+<h1>My profile</h1>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @user.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @user.lastname %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Account Id:</strong>
+  <%= @user.accountid %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @user.phone %>
+</p>
+
+<p>
+  <strong>Mobile phone:</strong>
+  <%= @user.mobilephone %>
+</p>
+
+<p>
+  <strong>Mailing street:</strong>
+  <%= @user.mailingstreet %>
+</p>
+
+<p>
+  <strong>Mailing city:</strong>
+  <%= @user.mailingcity %>
+</p>
+
+<p>
+  <strong>Mailing postal code:</strong>
+  <%= @user.mailingpostalcode %>
+</p>
+
+<p>
+  <strong>Mailing state:</strong>
+  <%= @user.mailingstate %>
+</p>
+
+<p>
+  <strong>Mailing country:</strong>
+  <%= @user.mailingcountry %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user),  {class: "btn btn-info"} %>
+<br />
+<br />
+<%= link_to 'My contracts', contracts_path,  {class: "btn btn-info"} %>
