@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   root 'sessions#welcome'
 
   resources :users, except: [:index, :destroy]
@@ -9,7 +10,8 @@ Rails.application.routes.draw do
   get 'welcome', to: 'sessions#welcome'
   
   # resources :sessions, only: [:new, :create, :destroy]
-  resources :contracts
+  resources :contracts, only: [:index, :show]
+  resources :products, only: [:index, :show]
   
   get "*path" => redirect("/")
 end
