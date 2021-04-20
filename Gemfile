@@ -27,10 +27,6 @@ gem 'bcrypt'
 
 gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'jquery-rails'
-# authentication
-gem 'devise'
-
-#gem 'devise'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

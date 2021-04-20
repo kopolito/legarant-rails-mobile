@@ -44,4 +44,30 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to '/welcome', notice: "Logged out!"
   end
+
+  def edit
+  end
+
+  def update
+    @user = current_user
+    if !@user.valid_password(params[:password])
+      respond_to do |format|
+        flash[:notice] = "Please confirm your password"
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    else 
+      @user.encrypted_password__c = User.hash_password(params[:password])
+      respond_to do |format|
+        if @user.save
+          format.html { redirect_to @user, notice: "Password updated" }
+          format.json { render :show, status: :ok, location: @user }
+        else
+          flash[:notice] = "Could not update password"
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
+      end
+    end
+  end
 end
