@@ -9,6 +9,7 @@
       <th>Account Name</th>
       <th>Start Date</th>
       <th>Contract Term  (months)</th>
+      <th>Status</th>
       <th></th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%= contract.account_name %></td>
         <td><%= contract.startdate %></td>
         <td><%= contract.contractterm %></td>
+        <td><%= contract.status %></td>
         <td><%= link_to 'Show', contract,  {class: "btn btn-info"} %></td>
       </tr>
     <% end %>
