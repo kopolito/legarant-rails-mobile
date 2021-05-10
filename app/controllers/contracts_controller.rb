@@ -4,7 +4,7 @@ class ContractsController < ApplicationController
 
   # GET /contracts or /contracts.json
   def index
-    @contracts = Contract.where({accountid: current_user.accountid})
+    @contracts = Contract.where({accountid: current_user.accountid}).order(:StartDate)
   end
 
   # GET /contracts/1 or /contracts/1.json
