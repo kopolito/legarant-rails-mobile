@@ -2,7 +2,7 @@
 
 ## Heroku hosted app
 
-V 0.4
+V 0.4.1
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
